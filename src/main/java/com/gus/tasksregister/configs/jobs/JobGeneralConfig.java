@@ -11,7 +11,7 @@ import org.springframework.core.task.SimpleAsyncTaskExecutor;
 public class JobGeneralConfig {
 
     @Bean
-    public JobLauncher jobLauncher(JobRepository jobRepository) throws Exception {
+    public JobLauncher customJobLauncher(JobRepository jobRepository) throws Exception {
         TaskExecutorJobLauncher jobLauncher = new TaskExecutorJobLauncher();
         jobLauncher.setJobRepository(jobRepository);
         jobLauncher.setTaskExecutor(new SimpleAsyncTaskExecutor());
