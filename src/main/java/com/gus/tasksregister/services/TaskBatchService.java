@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.UUID;
 
 @Service
@@ -31,6 +32,7 @@ public class TaskBatchService {
 
         customJobLauncher.run(registerNewTasksJob, new JobParametersBuilder()
                 .addString("jobUUID", UUID.randomUUID().toString())
+                        .addDate("executeDate", new Date())
                 .toJobParameters()
         );
     }

@@ -4,9 +4,9 @@
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:15432/tasksdb
+    url: jdbc:postgresql://localhost:5432/tasksdb
     username: postgres
-    password: postgres
+    password: password
   jpa:
     hibernate:
       ddl-auto: none

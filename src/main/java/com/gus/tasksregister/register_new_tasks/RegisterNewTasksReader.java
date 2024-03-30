@@ -9,16 +9,17 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class RegisterNewTasksReader implements ItemReader<Task> {
+public class RegisterNewTasksReader implements ItemReader<TaskBatchItem> {
 
-    private final FlatFileItemReader<Task> reader;
+    private final FlatFileItemReader<TaskBatchItem> reader;
 
     public RegisterNewTasksReader() {
-        reader = new FlatFileItemReaderBuilder<Task>()
+        reader = new FlatFileItemReaderBuilder<TaskBatchItem>()
                 .name("registerNewTasksReader")
                 .delimited()
                 .names("description")
-                .targetType(Task.class)
+                .linesToSkip(1)
+                .targetType(TaskBatchItem.class)
                 .build();
     }
 
@@ -28,7 +29,7 @@ public class RegisterNewTasksReader implements ItemReader<Task> {
     }
 
     @Override
-    public Task read() throws Exception, UnexpectedInputException, ParseException, NonTransientResourceException {
+    public TaskBatchItem read() throws Exception, UnexpectedInputException, ParseException, NonTransientResourceException {
         try {
             return reader.read();
         } catch (Exception e) {
