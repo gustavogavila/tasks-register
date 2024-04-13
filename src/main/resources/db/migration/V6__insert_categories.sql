@@ -1,0 +1,10 @@
+INSERT INTO public.category (id, "name") VALUES(1, 'LAZER');
+INSERT INTO public.category (id, "name") VALUES(2, 'TRABALHO');
+INSERT INTO public.category (id, "name") VALUES(3, 'FAMILIA');
+INSERT INTO public.category (id, "name") VALUES(4, 'EMOCIONAL');
+INSERT INTO public.category (id, "name") VALUES(5, 'ESPIRITUAL');
+INSERT INTO public.category (id, "name") VALUES(6, 'SAUDE');
+INSERT INTO public.category (id, "name") VALUES(7, 'EDUCACAO');
+INSERT INTO public.category (id, "name") VALUES(8, 'SOCIAL');
+INSERT INTO public.category (id, "name") VALUES(9, 'LEITURA');
+INSERT INTO public.category (id, "name") VALUES(10, 'DIVERSAO');

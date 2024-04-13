@@ -14,7 +14,7 @@ public class RegisterNewTasksWriterConfig {
     public JdbcBatchItemWriter<TaskBatchItem> registerNewTasksWriter(DataSource dataSource) {
         return new JdbcBatchItemWriterBuilder<TaskBatchItem>()
                 .dataSource(dataSource)
-                .sql("INSERT INTO task (id, description) VALUES (nextval('sq_task'), :description)")
+                .sql("INSERT INTO task (id, title, description) VALUES (nextval('sq_task'), :title, :description)")
                 .beanMapped()
                 .build();
     }

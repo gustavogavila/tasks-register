@@ -13,7 +13,7 @@ import static java.util.Objects.nonNull;
 public class TaskClassifierWriterConfig {
 
     @Bean
-    public ClassifierCompositeItemWriter<TaskBatchItem> taskClassifierWriter(JdbcBatchItemWriter<TaskBatchItem> registerNewTasksWriter,
+    public ClassifierCompositeItemWriter<TaskBatchItem> taskClassifierWriter(RegisterTasksAndCategoriesWriter registerNewTasksWriter,
                                                                              FlatFileItemWriter<TaskBatchItem> registerNewErrorTaskWriter) {
 
         return new ClassifierCompositeItemWriterBuilder<TaskBatchItem>().classifier(classifiable -> {

@@ -19,7 +19,10 @@ public class RegisterNewErrorTaskWriterConfig {
                 .name("registerNewTasksWriter")
                 .resource(new FileSystemResource(path))
                 .delimited()
-                .names("description", "problems")
+                .delimiter(",")
+                .names("description", "title", "categories_ids", "problems")
+                .headerCallback(writer -> writer.write("description,title,categories_ids,problems"))  // Escreve o cabeçalho
+
                 .build();
     }
 }

@@ -1,0 +1,1 @@
+ALTER TABLE task ADD COLUMN title varchar(255) NOT NULL;

@@ -17,7 +17,7 @@ public class RegisterNewTasksReader implements ItemReader<TaskBatchItem> {
         reader = new FlatFileItemReaderBuilder<TaskBatchItem>()
                 .name("registerNewTasksReader")
                 .delimited()
-                .names("description")
+                .names("description", "title", "categories_ids")
                 .linesToSkip(1)
                 .targetType(TaskBatchItem.class)
                 .build();
